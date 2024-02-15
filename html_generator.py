@@ -10,3 +10,10 @@ def make_body(title, body):
     </body>
     </html>
     """
+
+def form():
+    return """<form action="/">
+  <input type="text" id="fname" name="fname">
+  <input type="submit" value="Submit">
+</form>
+"""

@@ -1,21 +1,20 @@
 from flask import Flask, redirect, request
+from data_structures import MySingleStringHolder
 import html_helper as h
+
+my_data = MySingleStringHolder("Hello World")
 
 app = Flask(__name__)
 
-some_data = "Hello World"
-form_name = "fname"
-
 @app.route("/", methods = ["GET"])
 def root_get():
-    html_body = h.form(form_name) + "<br>" + some_data
+    html_body = h.form(h.form_name) + "<br>My data: " + my_data.string
     html = h.root("Otsikko", html_body)
     return html
 
 @app.route("/", methods = ["POST"])
-def root_post():
-    global some_data # käytetään globaalia muuttujaa
-    some_data = request.form[form_name]
+def root_post():    
+    my_data.string = request.form[h.form_name]
     return redirect("/")
 
 if __name__ == "__main__":

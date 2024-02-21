@@ -4,6 +4,6 @@ def root(title, body):
     # replace {title} and {body} from html
     return body_html.format(title=title, body=body) 
 
-def form():
+def form(form_name):
     form_html = open('form.html', 'r').read() 
-    return form_html
+    return form_html.format(fname=form_name) 

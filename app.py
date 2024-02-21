@@ -1,5 +1,5 @@
 from flask import Flask, redirect, request
-import html_generator as h
+import html_helper as h
 
 app = Flask(__name__)
 

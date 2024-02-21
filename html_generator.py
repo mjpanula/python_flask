@@ -1,19 +1,9 @@
 def make_body(title, body):
-    return f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <title>{title}</title>
-    </head>
-    <body>    
-    {body}
-    </body>
-    </html>
-    """
+    # read a file into a string variable
+    body_html = open('body.html', 'r').read()
+    # replace {title} and {body} from html
+    return body_html.format(title=title, body=body) 
 
 def form():
-    return """<form action="/">
-  <input type="text" id="fname" name="fname">
-  <input type="submit" value="Submit">
-</form>
-"""
+    form_html = open('form.html', 'r').read() 
+    return form_html

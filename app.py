@@ -6,8 +6,10 @@ app = Flask(__name__)
 some_data = "Hello World"
 
 @app.route("/")
-def root_get():    
-    return h.make_body("titteli", h.form() + "<br>" + some_data)
+def root_get():
+    html_body = h.form() + "<br>" + some_data
+    html = h.root("Otsikko", html_body)
+    return html
 
 @app.route("/", methods = ["POST"])
 def root_post():

@@ -1,4 +1,4 @@
-def make_body(title, body):
+def root(title, body):
     # read a file into a string variable
     body_html = open('body.html', 'r').read()
     # replace {title} and {body} from html

@@ -8,13 +8,13 @@ app = Flask(__name__)
 
 @app.route("/", methods = ["GET"])
 def root_get():
-    html_body = h.form(h.form_name) + "<br>My data: " + my_data.string
+    html_body = h.form(h.form_name) + "<br>My data: " + my_data.get()
     html = h.root("Otsikko", html_body)
     return html
 
 @app.route("/", methods = ["POST"])
 def root_post():    
-    my_data.string = request.form[h.form_name]
+    my_data.set(request.form[h.form_name])
     return redirect("/")
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/", methods = ["GET"])
 def root_get():
     html_body = h.form(h.form_name) + "<br>Circle: " + str(circle_coordinates) + "<br>"
-    html_body += open('canvas.html', 'r').read()
+    html_body += h.canvas("myCanvas")
     html = h.root("Otsikko", html_body)
     return html
 

@@ -1,8 +1,6 @@
 from flask import Flask, redirect, request, jsonify
-from data_structures import MySingleStringHolder
 import html_helper as h
 
-my_data = MySingleStringHolder("Hello World")
 circle_coordinates = {"x": 100, "y": 100, "radius": 50}
 
 app = Flask(__name__)
